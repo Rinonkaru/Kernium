@@ -90,10 +90,6 @@ public class Pubwarp implements BasicCommand {
 					stack.getSender().sendMessage("§aPublic warp added.");
 				}
 			} else if (arguments[0].equalsIgnoreCase("remove")) {
-				if (!executor.equalsIgnoreCase("rinonkaru")) {
-					stack.getSender().sendMessage("§cYou do not have permission to remove public warps.");
-					return;
-				}
 				String location_name = arguments[1].toLowerCase();
 				if (!public_warps.containsKey(location_name)) {
 					stack.getSender().sendMessage("§cPublic warp not found.");
@@ -108,3 +104,4 @@ public class Pubwarp implements BasicCommand {
 		}
 	}
 }
+
