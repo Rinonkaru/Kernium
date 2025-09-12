@@ -1,0 +1,19 @@
+name: Kernium
+version: '1.0'
+main: me.rinonkaru.kernium.Kernium
+api-version: '1.21'
+authors: Rinonkaru
+description: A Minecraft server plugin that provides various utilities and features.
+commands:
+    warp:
+        description: Teleport to a predefined warp location.
+        usage: /warp <name>
+    setwarp:
+        description: Set a new warp location.
+        usage: /setwarp <name>
+    delwarp:
+        description: Delete a predefined warp location.
+        usage: /delwarp <name>
+    pubwarp:
+        description: List all public warps.
+        usage: /pubwarp [add|]
