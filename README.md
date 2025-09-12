@@ -1,5 +1,7 @@
 # Kernium
-Kernium is a Bukkit/Spigot/Paper plugin that adds functionalities I like to have to the servers I create. Right now it only possesses `/warp`, `/setwarp`, `/delwarp`, and `/pubwarp`. Further explainations will be provided below for what these commands do and how to use them.
+Kernium is a Bukkit/Spigot/Paper plugin that adds functionalities I like to have to the servers I create. Right now it only possesses `/warp`, `/setwarp`, `/delwarp`, and `/pubwarp`. Further explainations will be provided below for what these commands do and how to use them. 
+
+If you have any bugs, or features you'd like to request, please feel free to open an issue regarding it. I will be monitoring daily.
 
 ## Note: 
 All of the commands listed below have autocomplete enabled using the `BasicCommand` suggestion method. You do not need to remember the names of the locations you've set, the plugin will remember for you.
