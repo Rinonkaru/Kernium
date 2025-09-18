@@ -11,8 +11,6 @@ Configurations will be coming in the future. As of now, anyone can remove public
 ## Warning:
 I have fixed the `OutOFMemory` error being easy to reach by limiting warp creation but an extreme amount of players can still cause that to happen (though incredibly difficult to reach).
 
-This has been fixed by adding a hard limit of 3 public warps, and 5 personal warps. Though, it is still possible through an extreme amount of players creating warps.
-
 ## Commands
 
 ### Warp Command
