@@ -9,7 +9,9 @@ All of the commands listed below have autocomplete enabled using the `BasicComma
 Configurations will be coming in the future. As of now, anyone can remove public warps.
 
 ## Warning:
-This plugin is in its early stages of development, keep in mind that as of right now, there is no limit on how many private or public warp locations can be set, I will be adding a limit in the future but please be careful not to cause an `OutOfMemory` error due to excessive warp creations. **I am not responsible for any world corruption or server failures due to this issue.**
+I have fixed the `OutOFMemory` error being easy to reach by limiting warp creation but an extreme amount of players can still cause that to happen (though incredibly difficult to reach).
+
+This has been fixed by adding a hard limit of 3 public warps, and 5 personal warps. Though, it is still possible through an extreme amount of players creating warps.
 
 ## Commands
 
@@ -21,6 +23,7 @@ This plugin is in its early stages of development, keep in mind that as of right
 ### Set Warp Command
 - Usage: `/setwarp <designation>`
 - This command allows you to create a new private warp location for you. You simply choose a good name and the command will set that warp location to be exactly where you are in game, including which way you're turned and what way you're looking (Yaw and Pitch).
+- A hard limit of 5 personal warps has been imposed, though this can be changed in the code.
 
 ### Delete Warp Command
 - Usage: `/delwarp <designation>`
@@ -32,3 +35,4 @@ This plugin is in its early stages of development, keep in mind that as of right
 - Using the command with no operation argument will simply warp the user to the public warp location: e.g. `/pubwarp <designation>`.
 - Using the command with the `add` operation will allow you to create a new public warp location: e.g. `/pubwarp add <designation>`.
 - Using the command with the `remove` operation will allow you to renice a public warp location: e.g. `/pubwarp remove <designation>`.
+- A hard limit of 3 personal warps has been imposed, though this can be changed in the code.
