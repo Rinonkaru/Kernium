@@ -52,12 +52,16 @@ public class Setwarp implements BasicCommand {
 		if (personal_warps.containsKey(location_name)) {
 			personal_warps.put(location_name, new KerniumLocation(stack.getExecutor().getLocation()));
 			instance.warps.put(executor, personal_warps);
-			stack.getSender().sendMessage("§aWarp updated.");
+			stack.getSender().sendMessage("§aWarp " + arguments[0] + " updated.");
+			return;
+		}
+		if (personal_warps.size() >= 5) {
+			stack.getSender().sendMessage("§cYou can only have 5 warps. Delete one with /delwarp <name>.");
 			return;
 		}
 		personal_warps.put(location_name, new KerniumLocation(stack.getExecutor().getLocation()));
 		instance.warps.put(executor, personal_warps);
-		stack.getSender().sendMessage("§aWarp set.");
+		stack.getSender().sendMessage("§aWarp " + arguments[0] + " set.");
 	}
 	
 }

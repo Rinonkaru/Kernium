@@ -6,6 +6,9 @@ import me.rinonkaru.kernium.Types.KerniumLocation;
 import io.papermc.paper.command.brigadier.BasicCommand;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 
+import org.bukkit.Chunk;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -14,8 +17,20 @@ public class Warp implements BasicCommand {
 	
 	private final Kernium instance;
 	
-	public Warp(Kernium plugin) {
-		this.instance = plugin;
+	public Warp(Kernium plugin) { this.instance = plugin; }
+	
+	private void preload_warp(KerniumLocation location) {
+		World world = instance.getServer().getWorld(location.getWorld());
+		if (world == null) { return; }
+		Chunk warp_chunk = world.getChunkAt(new Location(world, location.getX(), location.getY(), location.getZ()));
+		for (int x = -12; x <= 12; x++) {
+			for (int z = -12; z <= 12; z++) {
+				Chunk chunk = world.getChunkAt(warp_chunk.getX() + x, warp_chunk.getZ() + z);
+				if (!chunk.isLoaded()) {
+					world.addPluginChunkTicket(chunk.getX(), chunk.getZ(), instance);
+				}
+			}
+		}
 	}
 	
 	@Override
@@ -59,6 +74,7 @@ public class Warp implements BasicCommand {
 			return;
 		}
 		KerniumLocation warp_location = personal_warps.get(location_name);
+		preload_warp(warp_location);
 		stack.getExecutor().teleportAsync(warp_location.toBukkitLocation());
 		stack.getSender().sendMessage("§aTeleported to warp §6" + location_name + "§a.");
 	}

@@ -13,6 +13,7 @@ public class KerniumLocation {
 	private double z;
 	private float yaw;
 	private float pitch;
+	private String creator;
 	
 	public KerniumLocation() {}
 	
@@ -81,4 +82,13 @@ public class KerniumLocation {
 	public void setPitch(float pitch) {
 		this.pitch = pitch;
 	}
+	
+	public String getCreator() {
+		return creator;
+	}
+	
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+	
 }
